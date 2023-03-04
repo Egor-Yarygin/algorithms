@@ -4,10 +4,10 @@ SOURCE = c++.cpp
 
 ifeq ($(OS), Windows_NT)
 	RM = del
-	TARGET = result.exe
+	TARGET = c++.exe
 else
 	RM = rm
-	TARGET = result
+	TARGET = c++
 endif
 
 
@@ -16,7 +16,7 @@ all:
 	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
 
 run: all
-	$(TARGET) | py .\python.py
+	.\$(TARGET) | py .\python.py
 
 clean:
 	$(RM) $(TARGET)
